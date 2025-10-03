@@ -12,5 +12,10 @@ app.use(express.json());
 // Routes
 app.use("/mpesa", mpesaRoutes);
 
+app.get("/health", (req, res) => {
+  res.status(200).json({ status: "ok", uptime: process.uptime() });
+});
+
+
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => console.log(`🚀 M-Pesa Mini App running on http://localhost:${PORT}`));

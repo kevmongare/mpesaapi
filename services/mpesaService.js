@@ -6,6 +6,7 @@ dotenv.config();
 
 const baseURL = "https://sandbox.safaricom.co.ke";
 
+
 export const getToken = async () => {
   const { MPESA_CONSUMER_KEY, MPESA_CONSUMER_SECRET } = process.env;
   const auth = Buffer.from(`${MPESA_CONSUMER_KEY}:${MPESA_CONSUMER_SECRET}`).toString("base64");
